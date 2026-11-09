@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>China &amp; Portuguese-speaking Countries · Travel × Health</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Travel<span>×</span>Health</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="china-lusophone.html">China &amp; Lusophone</a></li>
+        <li><a href="tourism-health.html">Tourism &amp; Health Systems</a></li>
+        <li><a href="wellness-map.html">Wellness Map</a></li>
+        <li><a href="sources.html">Data &amp; Methods</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <h1 class="page-title">China &amp; Portuguese-speaking Countries</h1>
+    <p class="page-lead">
+      Tourism, health-system and travel-health indicators for China, Macao SAR and the nine member states
+      of the Community of Portuguese Language Countries (CPLP). Macao has hosted the Forum for Economic and
+      Trade Co-operation between China and Portuguese-speaking Countries since 2003.
+    </p>
+
+    <p class="note warn">
+      World Bank data for Macao SAR covers tourism and population but few health-system indicators.
+      Tourism series for some countries end several years ago. Each value shows its own year.
+    </p>
+
+    <div class="controls">
+      <label>Indicator <select id="indicator"></select></label>
+      <label class="checkbox"><input type="checkbox" id="log-y"> Log scale</label>
+    </div>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Latest value by country</h2>
+        <p class="sub" id="bar-sub">Loading…</p>
+        <div class="chart-box tall" id="bar-box"><canvas id="bar-chart"></canvas></div>
+      </div>
+      <div class="card">
+        <h2>Trend since 2000</h2>
+        <p class="sub" id="line-sub">Loading…</p>
+        <div class="chart-box tall"><canvas id="line-chart"></canvas></div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Country profiles</h2>
+      <p class="sub">Latest value within the last 10 years. The small number after each value is its year.</p>
+      <div class="table-wrap">
+        <table id="profile-table"><thead></thead><tbody></tbody></table>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Travel health risks</h2>
+      <p class="sub">
+        Disease burden and immunization coverage that matter for travellers moving between these countries.
+        Higher malaria, tuberculosis and HIV values and lower measles coverage mean higher risk.
+      </p>
+      <div class="table-wrap">
+        <table id="risk-table"><thead></thead><tbody></tbody></table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Visitors to Macao from Portuguese-speaking countries</h2>
+      <p class="note" id="visitors-note">
+        No visitor figures loaded yet. Add them to <code>data/manual/macao_visitors.csv</code>
+        from Macao DSEC visitor arrival statistics.
+      </p>
+      <div class="table-wrap">
+        <table id="visitors-table"><thead></thead><tbody></tbody></table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Data: World Bank Open Data (CC BY 4.0); Macao DSEC. See <a href="sources.html">Data &amp; Methods</a>.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/china-lusophone.js"></script>
+</body>
+</html>
