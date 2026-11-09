@@ -130,16 +130,20 @@
   ]);
 
   // Optional manual file: year,origin,visitors
+  // DSEC figures classified by place of issue of travel document.
   try {
     const rows = Dash.parseCSV(await Dash.loadText('data/manual/macao_visitors.csv'))
       .filter(r => r.year && r.origin && r.visitors !== '' && !Number.isNaN(Number(r.visitors)));
     if (rows.length) {
-      const years = [...new Set(rows.map(r => r.year))].sort();
+      // Continuous year range, so missing years show as "–" instead of disappearing.
+      const nums = rows.map(r => Number(r.year));
+      const years = [];
+      for (let y = Math.min(...nums); y <= Math.max(...nums); y++) years.push(String(y));
       const origins = [...new Set(rows.map(r => r.origin))];
-      const value = new Map(rows.map(r => [`${r.origin}|${r.year}`, Number(r.visitors)]));
+      const value = new Map(rows.map(r => [`${r.origin}|${Number(r.year)}`, Number(r.visitors)]));
       const table = document.getElementById('visitors-table');
       table.querySelector('thead').innerHTML =
-        `<tr><th>Place of residence</th>${years.map(y => `<th class="num">${Dash.esc(y)}</th>`).join('')}</tr>`;
+        `<tr><th>Travel document issued in</th>${years.map(y => `<th class="num">${Dash.esc(y)}</th>`).join('')}</tr>`;
       table.querySelector('tbody').innerHTML = origins.map(o => `
         <tr>
           <td>${Dash.esc(o)}</td>
