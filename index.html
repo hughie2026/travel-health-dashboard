@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel × Health Data Dashboard</title>
+  <meta name="description" content="Open data dashboard on travel, medical care, health and wellness, with a focus on China and Portuguese-speaking countries.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Travel<span>×</span>Health</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="china-lusophone.html">China &amp; Lusophone</a></li>
+        <li><a href="tourism-health.html">Tourism &amp; Health Systems</a></li>
+        <li><a href="wellness-map.html">Wellness Map</a></li>
+        <li><a href="sources.html">Data &amp; Methods</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <h1 class="page-title">Travel × Health Dashboard</h1>
+    <p class="page-lead">
+      Open data on how international travel connects with medical care, public health and wellness,
+      with a focus on China, Macao and the Portuguese-speaking world.
+      All sources are free to access without registration and refresh weekly.
+    </p>
+
+    <section class="grid grid-4" aria-label="Key figures">
+      <div class="card" id="kpi-countries">
+        <div class="kpi-label">Countries covered</div>
+        <div class="kpi-value">–</div>
+        <div class="kpi-note">Loading…</div>
+      </div>
+      <div class="card" id="kpi-macao">
+        <div class="kpi-label">Macao arrivals</div>
+        <div class="kpi-value">–</div>
+        <div class="kpi-note">Loading…</div>
+      </div>
+      <div class="card" id="kpi-places">
+        <div class="kpi-label">Places mapped</div>
+        <div class="kpi-value">–</div>
+        <div class="kpi-note">Loading…</div>
+      </div>
+      <div class="card" id="kpi-updated">
+        <div class="kpi-label">Data refreshed</div>
+        <div class="kpi-value">–</div>
+        <div class="kpi-note">Loading…</div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>International tourism arrivals: China and Portuguese-speaking countries</h2>
+      <p class="sub">Source: World Bank (ST.INT.ARVL). Log scale, so small and large countries fit on one chart.</p>
+      <div class="chart-box" id="arrivals-box"><canvas id="arrivals-chart"></canvas></div>
+    </section>
+
+    <section class="grid grid-4" aria-label="Explore">
+      <a class="card link-card" href="china-lusophone.html">
+        <h2>China &amp; Lusophone</h2>
+        <p>Tourism, health systems and travel health risks across China, Macao and the CPLP countries.</p>
+      </a>
+      <a class="card link-card" href="tourism-health.html">
+        <h2>Tourism &amp; Health Systems</h2>
+        <p>Compare health spending, doctors and hospital capacity against tourism for all countries.</p>
+      </a>
+      <a class="card link-card" href="wellness-map.html">
+        <h2>Wellness Map</h2>
+        <p>Hospitals, clinics, spas and fitness venues in Macao, Lisbon, Rio, Luanda, Maputo, Praia and Dili.</p>
+      </a>
+      <a class="card link-card" href="sources.html">
+        <h2>Data &amp; Methods</h2>
+        <p>Sources, licences, formulas and known limitations.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Data: World Bank, Macao DSEC, © OpenStreetMap contributors. See <a href="sources.html">Data &amp; Methods</a>.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/overview.js"></script>
+</body>
+</html>
