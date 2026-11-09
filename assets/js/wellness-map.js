@@ -17,10 +17,13 @@
   }
 
   const map = L.map('map', { preferCanvas: true });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+
+  // OpenStreetMap standard tiles: no API key required.
+  // The CSS class "basemap-dark" turns them into a dark blue style.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19,
+    className: 'basemap-dark',
   }).addTo(map);
 
   const layers = Object.fromEntries(Object.keys(CATS).map(k => [k, L.layerGroup().addTo(map)]));
@@ -62,7 +65,7 @@
         radius: 5,
         color: cat.color,
         fillColor: cat.color,
-        fillOpacity: 0.75,
+        fillOpacity: 0.85,
         weight: 1,
       })
         .bindPopup(`<strong>${Dash.esc(p.name || 'Unnamed')}</strong><br>${cat.label}`)
