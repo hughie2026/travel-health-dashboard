@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tourism &amp; Health Systems · Travel × Health</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Travel<span>×</span>Health</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="china-lusophone.html">China &amp; Lusophone</a></li>
+        <li><a href="tourism-health.html">Tourism &amp; Health Systems</a></li>
+        <li><a href="wellness-map.html">Wellness Map</a></li>
+        <li><a href="sources.html">Data &amp; Methods</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <h1 class="page-title">Tourism &amp; Health Systems</h1>
+    <p class="page-lead">
+      Country-level comparison of tourism and health-system indicators from the World Bank.
+      Each point uses the most recent year in which both selected indicators are available.
+    </p>
+
+    <p class="note warn">
+      These are comparisons between countries. A pattern across countries does not show that tourism
+      causes a health outcome, or the reverse.
+    </p>
+
+    <section class="card section">
+      <h2>Compare indicators</h2>
+      <p class="sub" id="scatter-count">Loading…</p>
+      <div class="controls">
+        <label>X axis <select id="x-select"></select></label>
+        <label>Y axis <select id="y-select"></select></label>
+        <label>Region <select id="region-select"><option value="all">All regions</option></select></label>
+        <label class="checkbox"><input type="checkbox" id="log-x" checked> Log scale (X)</label>
+        <label class="checkbox"><input type="checkbox" id="highlight" checked> Highlight China &amp; Portuguese-speaking countries</label>
+      </div>
+      <div class="chart-box tall" id="scatter-box"><canvas id="scatter-chart"></canvas></div>
+    </section>
+
+    <section class="card">
+      <h2>Hospital beds per 1,000 international arrivals</h2>
+      <p class="sub">
+        Total hospital beds divided by annual international arrivals, a rough measure of how much hospital
+        capacity exists relative to visitor volume. Countries with fewer than 100,000 arrivals are excluded.
+        Each input uses its own latest year.
+      </p>
+      <div class="controls">
+        <label>Countries
+          <select id="beds-scope">
+            <option value="all">All countries</option>
+            <option value="group">China &amp; Portuguese-speaking</option>
+          </select>
+        </label>
+        <label>Show
+          <select id="beds-order">
+            <option value="asc">Lowest 15</option>
+            <option value="desc">Highest 15</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table id="beds-table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th class="num">Beds per 1,000 arrivals</th>
+              <th class="num">Beds per 1,000 residents</th>
+              <th class="num">International arrivals</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Data: World Bank Open Data (CC BY 4.0). See <a href="sources.html">Data &amp; Methods</a>.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/tourism-health.js"></script>
+</body>
+</html>
