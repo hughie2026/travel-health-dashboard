@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wellness Map · Travel × Health</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Travel<span>×</span>Health</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="china-lusophone.html">China &amp; Lusophone</a></li>
+        <li><a href="tourism-health.html">Tourism &amp; Health Systems</a></li>
+        <li><a href="wellness-map.html">Wellness Map</a></li>
+        <li><a href="sources.html">Data &amp; Methods</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <h1 class="page-title">Wellness Map</h1>
+    <p class="page-lead">
+      Hospitals, clinics, hot springs, spas and fitness venues in Macao and cities of the Portuguese-speaking
+      world, mapped from OpenStreetMap. Coverage depends on what volunteers have added, so a missing place
+      may still exist.
+    </p>
+
+    <div class="controls">
+      <label>City <select id="city"></select></label>
+    </div>
+
+    <section class="card section">
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <div id="map" role="region" aria-label="Map of medical and wellness places"></div>
+    <p class="map-meta" id="map-updated"></p>
+  </main>
+
+  <footer class="site-footer">
+    Data: © OpenStreetMap contributors (ODbL). Basemap © CARTO. See <a href="sources.html">Data &amp; Methods</a>.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/wellness-map.js"></script>
+</body>
+</html>
