@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data &amp; Methods · Travel × Health</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Travel<span>×</span>Health</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="china-lusophone.html">China &amp; Lusophone</a></li>
+        <li><a href="tourism-health.html">Tourism &amp; Health Systems</a></li>
+        <li><a href="wellness-map.html">Wellness Map</a></li>
+        <li><a href="sources.html">Data &amp; Methods</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <h1 class="page-title">Data &amp; Methods</h1>
+    <p class="page-lead">
+      Every dataset on this site is publicly available without registration or an API key.
+      A GitHub Actions workflow downloads the data every week and stores it as static JSON files.
+    </p>
+
+    <section class="card section">
+      <h2>Sources</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Source</th><th>Used for</th><th>Licence</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://data.worldbank.org/">World Bank Open Data</a></td>
+              <td>Tourism arrivals, departures and receipts; health spending, physicians, hospital beds;
+                life expectancy; malaria, tuberculosis, HIV, measles immunization; population</td>
+              <td>CC BY 4.0</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.dsec.gov.mo/">Macao Statistics and Census Service (DSEC)</a></td>
+              <td>Visitor arrivals to Macao by place of residence (entered manually)</td>
+              <td>DSEC terms of use, source cited</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> via Overpass API</td>
+              <td>Hospitals, clinics, hot springs, spas, fitness venues</td>
+              <td>ODbL 1.0</td>
+            </tr>
+            <tr>
+              <td><a href="https://carto.com/attributions">CARTO</a></td>
+              <td>Dark basemap tiles</td>
+              <td>CARTO basemap terms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Methods</h2>
+        <p><strong>China &amp; Portuguese-speaking countries.</strong> China, Macao SAR and the nine CPLP member
+          states: Angola, Brazil, Cabo Verde, Equatorial Guinea, Guinea-Bissau, Mozambique, Portugal,
+          São Tomé and Príncipe, and Timor-Leste.</p>
+        <p><strong>Scatter chart.</strong> For each country, the chart uses the most recent year within the last
+          10 years in which both selected indicators have a value.</p>
+        <p><strong>Hospital beds per 1,000 arrivals.</strong>
+          (beds per 1,000 residents × population ÷ 1,000) ÷ international arrivals × 1,000.
+          Each input uses its own latest year, shown in the table.</p>
+      </div>
+      <div class="card">
+        <h2>Limitations</h2>
+        <p>World Bank data for Macao SAR lacks most health-system indicators. Macao Health Bureau
+          statistics would be needed to fill this gap.</p>
+        <p>Some World Bank tourism series update slowly, and the latest year differs by country.</p>
+        <p>Smaller countries such as Guinea-Bissau and São Tomé and Príncipe have many missing years.</p>
+        <p>OpenStreetMap coverage varies by city. City areas are approximate bounding boxes; the Macao box
+          also covers parts of Hengqin and Zhuhai.</p>
+        <p>Differences between countries describe countries, not individuals, and do not show cause and effect.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Built with open data. Code licensed under the repository licence.
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>
