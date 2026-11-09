@@ -24,7 +24,7 @@
     <h1 class="page-title">Data &amp; Methods</h1>
     <p class="page-lead">
       Every dataset on this site is publicly available without registration or an API key.
-      A GitHub Actions workflow downloads the data every week and stores it as static JSON files.
+      A GitHub Actions workflow downloads the automated sources every week and stores them as static JSON files.
     </p>
 
     <section class="card section">
@@ -43,7 +43,7 @@
             </tr>
             <tr>
               <td><a href="https://www.dsec.gov.mo/">Macao Statistics and Census Service (DSEC)</a></td>
-              <td>Visitor arrivals to Macao by place of residence (entered manually)</td>
+              <td>Visitor arrivals to Macao by place of issue of travel document (entered manually)</td>
               <td>DSEC terms of use, source cited</td>
             </tr>
             <tr>
@@ -52,13 +52,26 @@
               <td>ODbL 1.0</td>
             </tr>
             <tr>
-              <td><a href="https://carto.com/attributions">CARTO</a></td>
-              <td>Dark basemap tiles</td>
-              <td>CARTO basemap terms</td>
+              <td><a href="https://operations.osmfoundation.org/policies/tiles/">OpenStreetMap tile server</a></td>
+              <td>Basemap tiles (restyled with a CSS filter)</td>
+              <td>ODbL 1.0, OSMF Tile Usage Policy</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section class="card section">
+      <h2>Macao visitor figures</h2>
+      <p>Figures for Portugal and Brazil come from these DSEC publications:</p>
+      <ul>
+        <li>2015–2016: <em>Macao Moderate Economic Diversification Statistical Indicator System 2016</em>, Table 10, p. 18.</li>
+        <li>2019–2022: <em>Macao Moderate Economic Diversification Statistical Indicator System 2022</em>, Table 27, p. 42.</li>
+        <li>2017–2018 (thousands only, not shown in the table): <em>Yearbook of Statistics 2019</em>, Table 9.1, p. 162.</li>
+      </ul>
+      <p>DSEC classifies these arrivals by place of issue of travel document, which differs from place of
+        residence. Angola, Cabo Verde, Equatorial Guinea, Guinea-Bissau, Mozambique, São Tomé and Príncipe
+        and Timor-Leste are not listed separately in the published tables.</p>
     </section>
 
     <section class="grid grid-2">
@@ -79,6 +92,8 @@
           statistics would be needed to fill this gap.</p>
         <p>Some World Bank tourism series update slowly, and the latest year differs by country.</p>
         <p>Smaller countries such as Guinea-Bissau and São Tomé and Príncipe have many missing years.</p>
+        <p>Macao visitor figures for 2020–2022 reflect COVID-19 entry restrictions. DSEC changed its
+          classification around 2015, so 2015 may not be fully comparable with later years.</p>
         <p>OpenStreetMap coverage varies by city. City areas are approximate bounding boxes; the Macao box
           also covers parts of Hengqin and Zhuhai.</p>
         <p>Differences between countries describe countries, not individuals, and do not show cause and effect.</p>
